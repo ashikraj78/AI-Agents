@@ -3,6 +3,8 @@ import traceback
 import logging
 import sys
 from test_research import test_research_topic   
+from customer_support_agent import customer_support_agent
+from customer_outreach_agent import customer_outreach_agent
 # Configure logging to show more detailed information
 logging.basicConfig(
     level=logging.DEBUG,
@@ -27,9 +29,12 @@ def research():
         return jsonify({'error': 'No topic provided'}), 400
     
     logger.info(f"Researching topic: {topic}")
+    print(f"Researching ashik topic: {topic}")
     
     try:
-        result = test_research_topic(topic)
+        # result = test_research_topic(topic)
+        # result = customer_support_agent(topic)
+        result = customer_outreach_agent(topic)
         logger.info("Research completed successfully")
         return jsonify({
             'success': True,
