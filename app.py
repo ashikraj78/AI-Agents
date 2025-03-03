@@ -5,6 +5,8 @@ import sys
 from test_research import test_research_topic   
 from customer_support_agent import customer_support_agent
 from customer_outreach_agent import customer_outreach_agent
+from event_planning_agent import event_planning_agent
+from job_tailor_agent import job_tailor_agent
 # Configure logging to show more detailed information
 logging.basicConfig(
     level=logging.DEBUG,
@@ -34,7 +36,9 @@ def research():
     try:
         # result = test_research_topic(topic)
         # result = customer_support_agent(topic)
-        result = customer_outreach_agent(topic)
+        # result = customer_outreach_agent(topic)
+        # result = event_planning_agent(topic)
+        result = job_tailor_agent()
         logger.info("Research completed successfully")
         return jsonify({
             'success': True,
